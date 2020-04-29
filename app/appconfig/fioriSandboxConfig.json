@@ -1,0 +1,84 @@
+{
+    "services": {
+        "LaunchPage": {            
+            "adapter": {
+                "config": {
+                    "groups": [
+                        {
+                            "id": "group1",
+                            "title": "General V2",
+                            "isPreset": true,
+                            "isVisible": true,
+                            "isGroupLocked": false,
+                            "tiles": [
+                                {
+                                    "id": "booksApp",
+                                    "title":  "Books",
+                                    "size": "1×1",
+                                    "tileType": "sap.ushell.ui.tile.StaticTile",
+                                    "properties": {
+                                        "chipId": "chip1",
+                                        "title": "Books",
+                                        "targetURL": "#Books-display"
+                                    }
+                                },
+                                {
+                                    "id": "authorsApp",
+                                    "title": "Browse Authors",
+                                    "size": "1×1",
+                                    "tileType": "sap.ushell.ui.tile.StaticTile",
+                                    "properties": {
+                                        "chipId": "chip2",
+                                        "title": "Authors custom Fiori Element reusable App",
+                                        "targetURL": "#Authors-display"
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        },
+        "NavTargetResolution": {
+            "config": {
+                "enableClientSideTargetResolution": true
+            }
+        },
+        "ClientSideTargetResolution": {
+            "adapter": {
+                "config": {
+                    "inbounds": {
+                        "actionV2Authors": {
+                            "semanticObject": "Authors",
+                            "action": "display",
+                            "title": "Authors",
+                            "signature": {
+                                "parameters": {},
+                                "additionalParameters": "allowed"
+                            },
+                            "resolutionResult": {
+                                "applicationType": "SAPUI5",
+                                "additionalInformation": "SAPUI5.Component=v2.authors",
+                                "url": "/v2/authors"
+                            }
+                        },
+                        "actionV2Books": {
+                            "semanticObject": "Books",
+                            "action": "display",
+                            "title": "Browse Books",
+                            "signature": {
+                                "parameters": {},
+                                "additionalParameters": "allowed"
+                            },
+                            "resolutionResult": {
+                                "applicationType": "SAPUI5",
+                                "additionalInformation": "SAPUI5.Component=v2.books",
+                                "url": "/v2/books"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
